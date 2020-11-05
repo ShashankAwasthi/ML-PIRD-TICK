@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>CLASSIFY DISPLAY TICK</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="AUTH_GROUP" placeholder="AUTH_GROUP" required="required" />
+        <input type="text" name="BRAND" placeholder="BRAND" required="required" />
+		<input type="text" name="SPECIFICATION_TYPE" placeholder="SPECIFICATION_TYPE" required="required" />
+		<input type="text" name="ING_DISPLAY" placeholder="ING_DISPLAY" required="required" />
+		<input type="text" name="PAM_Spec_type" placeholder="PAM_Spec_type" required="required" />
+		<input type="text" name="Month_Year" placeholder="Month_Year" required="required" />
+		<input type="text" name="PAM_COMP_CLASS" placeholder="PAM_COMP_CLASS" required="required" />
+		<input type="text" name="PAM_COMP_COMM" placeholder="PAM_COMP_COMM" required="required" />
+		<input type="text" name="TFC" placeholder="TFC" required="required" />
+		<input type="text" name="LANGUAGE_VAL" placeholder="LANGUAGE_VAL" required="required" />
+		<input type="text" name="RATING_DIV" placeholder="RATING_DIV" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
